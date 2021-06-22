@@ -104,7 +104,7 @@ class MaxLineLengthExceptions(LineRule):
     id = "UC4"
     target = CommitMessageBody
     options_spec = [IntOption('line-length', 80, "Max line length")]
-    violation_message = "Line exceeds max length ({0}>{1})"
+    violation_message = "almonds Line exceeds max length ({0}>{1})"
 
     def validate(self, line, _commit):
         max_length = self.options['line-length'].value
