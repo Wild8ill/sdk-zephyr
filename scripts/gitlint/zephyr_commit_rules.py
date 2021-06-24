@@ -103,7 +103,7 @@ class MaxLineLengthExceptions(LineRule):
     name = "max-line-length-with-exceptions"
     id = "UC4"
     target = CommitMessageBody
-    options_spec = [IntOption('line-length', 80, "Max line length")]
+    options_spec = [IntOption('line-length', 125, "Max line length")]
     violation_message = "almonds Line exceeds max length ({0}>{1})"
 
     def validate(self, line, _commit):
@@ -117,3 +117,15 @@ class MaxLineLengthExceptions(LineRule):
 
         if len(line) > max_length:
             return [RuleViolation(self.id, self.violation_message.format(len(line), max_length), line)]
+    options_spec = [IntOption('line-length', 125, "Max line length")]
+    violation_message = "almonds Line exceeds max length ({0}>{1})"
+
+    def validate(self, line, _commit):
+        max_length = self.options['line-length'].value
+        urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', line)
+        if line.lower().startswith("signed-off-by"):
+            return
+
+        if urls:
+            return
+
