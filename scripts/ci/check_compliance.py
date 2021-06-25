@@ -839,7 +839,7 @@ class GitLint(ComplianceTest):
     def run(self):
         # By default gitlint looks for .gitlint configuration only in
         # the current directory
-        proc = subprocess.Popen('gitlint --debug --extra-path ../zephyr --commits ' + COMMIT_RANGE,
+        proc = subprocess.Popen('gitlint --debug --extra-path ../zephyr/scripts/gitlint --commits ' + COMMIT_RANGE,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 shell=True, cwd=GIT_TOP)
 
