@@ -835,7 +835,7 @@ class GitLint(ComplianceTest):
     name = "Gitlint"
     doc = "See https://docs.zephyrproject.org/latest/contribute/#commit-guidelines for more details"
     path_hint = "<git-top>"
-    print('almond' + GIT_TOP)
+    print('almond' + path_hint)
 
     def run(self):
         # By default gitlint looks for .gitlint configuration only in
