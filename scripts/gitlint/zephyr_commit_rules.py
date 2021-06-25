@@ -99,7 +99,7 @@ class TitleStartsWithSubsystem(LineRule):
         if not pattern.search(title):
             return [RuleViolation(self.id, violation_message, title)]
 
-class MaxLineLength(LineRule):
+class MaxLineLengthExceptions(LineRule):
     name = "max-line-length"
     id = "UC4"
     target = CommitMessageBody
