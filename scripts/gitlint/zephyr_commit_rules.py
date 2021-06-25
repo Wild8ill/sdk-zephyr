@@ -100,7 +100,7 @@ class TitleStartsWithSubsystem(LineRule):
             return [RuleViolation(self.id, violation_message, title)]
 
 class MaxLineLength(LineRule):
-    name = "max-line-length-with-exceptions"
+    name = "max-line-length"
     id = "UC4"
     target = CommitMessageBody
     options_spec = [IntOption('line-length', 125, "Max line length")]

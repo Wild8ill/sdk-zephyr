@@ -842,6 +842,7 @@ class GitLint(ComplianceTest):
         proc = subprocess.Popen('gitlint --commits ' + COMMIT_RANGE,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 shell=True, cwd=GIT_TOP)
+        print(GIT_TOP)
 
         msg = ""
         if proc.wait() != 0:
