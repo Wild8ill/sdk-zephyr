@@ -835,6 +835,7 @@ class GitLint(ComplianceTest):
     name = "Gitlint"
     doc = "See https://docs.zephyrproject.org/latest/contribute/#commit-guidelines for more details"
     path_hint = "<git-top>"
+    print('almond' + GIT_TOP)
 
     def run(self):
         # By default gitlint looks for .gitlint configuration only in
@@ -842,7 +843,6 @@ class GitLint(ComplianceTest):
         proc = subprocess.Popen('gitlint --commits ' + COMMIT_RANGE,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 shell=True, cwd=GIT_TOP)
-        print(GIT_TOP)
 
         msg = ""
         if proc.wait() != 0:
