@@ -1,3 +1,6 @@
+#
+# Copyright (c) 2018 Intel Corporation
+#
 # SPDX-License-Identifier: Apache-2.0
 
 """
@@ -100,10 +103,10 @@ class TitleStartsWithSubsystem(LineRule):
             return [RuleViolation(self.id, violation_message, title)]
 
 class MaxLineLengthExceptions(LineRule):
-    name = "max-line-length"
+    name = "max-line-length-with-exceptions"
     id = "UC4"
     target = CommitMessageBody
-    options_spec = [IntOption('line-length', 125, "Max line length")]
+    options_spec = [IntOption('line-length', 80, "Max line length")]
     violation_message = "almonds Line exceeds max length ({0}>{1})"
 
     def validate(self, line, _commit):
